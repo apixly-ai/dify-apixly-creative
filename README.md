@@ -52,4 +52,4 @@ On Community 1.17.1, native checks covered five free tools alongside Apixly Medi
 
 Creative compilation adds no external API, independent storage or telemetry. Dify may retain workflow inputs and outputs under workspace settings. Read [PRIVACY.md](PRIVACY.md). Cloud compatibility, live account authorization and new paid media quality are separate checks.
 
-[Website](https://apixly.ai/) · [Console](https://platform.apixly.ai/) · [Media API keys](https://platform.apixly.ai/keys) · [Models and prices](https://platform.apixly.ai/models) · [API docs](https://apixly.ai/docs) · [中文](readme/README_zh_Hans.md) · [Support](mailto:support@apixly.ai).
+[Website](https://apixly.ai/) · [Console](https://platform.apixly.ai/) · [Media API keys](https://platform.apixly.ai/keys) · [Models and prices](https://platform.apixly.ai/models) · [API docs](https://apixly.ai/docs) · [Chinese docs](readme/README_zh_Hans.md) · [Support](mailto:support@apixly.ai).
