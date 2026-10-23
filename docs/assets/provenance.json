@@ -1,30 +1,65 @@
 {
   "observed_at": "2026-10-23",
+  "native_scope": {
+    "creative_tools": 5,
+    "coexisting_media_tools": 5,
+    "combined_workflow_imports": 12,
+    "native_tool_panels_preserved": 53,
+    "controlled_input_cases_in_real_engine": 7,
+    "media_inference_submissions": 0,
+    "oauth_authorizations": 0
+  },
   "assets": [
     {
+      "file": "studio-workflow-desktop.png",
+      "sha256": "8b8d7c169a755a7af03eed0c4d17b2b267450c930b94205c0f7521efe76b846a",
+      "description": "Unchanged actual Community1.17.1 native editor, three compact Studio control cards feeding Compose and a success/error guard. Formal control defaults OFF; no credential or generation.",
+      "runtime_source": "https://github.com/apixly-ai/dify-apixly-creative/commit/89924367ec8edca0e03aee45a56c85cca4e1e8d9",
+      "host": "official Dify Community1.17.1 / plugin daemon0.6.10-local",
+      "captured_on": "2026-10-23",
+      "transformation": "none; exact capture bytes"
+    },
+    {
+      "file": "lighting-swatches-desktop.png",
+      "sha256": "5fa0f6ccbb914226287385794b6700d174a9321ae0f732a3a9819a68e7ff8bc8",
+      "description": "Unchanged actual native small Lighting dropdown. Eight existing Apixly Studio gradient swatches decoded inline at24x24; no external image service or generation.",
+      "runtime_source": "https://github.com/apixly-ai/dify-apixly-creative/commit/89924367ec8edca0e03aee45a56c85cca4e1e8d9",
+      "host": "official Dify Community1.17.1 / plugin daemon0.6.10-local",
+      "captured_on": "2026-10-23",
+      "transformation": "none; exact capture bytes"
+    },
+    {
       "file": "free-preview-desktop.png",
-      "sha256": "a7516700827330269f531b1cf2103ae83f8f94b37be9146e6a1be764a4170cbd",
-      "description": "Unchanged native Dify Community1.17.1 keyless preview screenshot, explicit three-group controls ON demo. No media generation, API key, signed URL, or private task identifiers."
+      "sha256": "6c98bba4a2d4703eb102316570d5d08b505385848a65e599beb611df67949261",
+      "description": "Unchanged actual local published running page at1440x1000, after a native free Run. Explicit all-controls-ON demo; canonical final prompt only, no account/Key/model call.",
+      "runtime_source": "https://github.com/apixly-ai/dify-apixly-creative/commit/89924367ec8edca0e03aee45a56c85cca4e1e8d9",
+      "host": "official Dify Community1.17.1 / plugin daemon0.6.10-local",
+      "captured_on": "2026-10-23",
+      "transformation": "none; exact capture bytes"
+    },
+    {
+      "file": "free-preview-mobile.png",
+      "sha256": "5bf95a9a9bc3340b7a23fed8249bfe3ea35bbdbe1a90a1f92e61779efeaed543",
+      "description": "Unchanged actual local published running-page result sheet at375x900 after a native free Run. Explicit all-controls-ON demo. Viewport qualification only; no iOS/touch/soft-keyboard claim.",
+      "runtime_source": "https://github.com/apixly-ai/dify-apixly-creative/commit/89924367ec8edca0e03aee45a56c85cca4e1e8d9",
+      "host": "official Dify Community1.17.1 / plugin daemon0.6.10-local",
+      "captured_on": "2026-10-23",
+      "transformation": "none; exact capture bytes"
+    },
+    {
+      "file": "cover.png",
+      "sha256": "ce92366ef07096fb6073638cf1fc14cda73fbc1c1f879846cbb4ef8df6827fc0",
+      "description": "Code-native illustrative artwork adapted from the official Apixly mark and existing Dify cover; Lucide Camera/Zap/Aperture icons used in Studio. Not a UI screenshot."
+    },
+    {
+      "file": "cover.svg",
+      "sha256": "62c05e48b11612c4484b79d2449fba7006476cd0d8cfa03527c1bf017bb33c08",
+      "description": "Vector source for the illustrative Apixly cover; existing official branding and Studio Lucide icons. Not a UI screenshot."
     },
     {
       "file": "LICENSE-lucide.txt",
       "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
       "description": "Lucide source license, copied unchanged."
-    },
-    {
-      "file": "free-preview-mobile.png",
-      "sha256": "29a49bc22588318ff08e88fb0d248550c003c821cc983e8ad8c4ca146077c688",
-      "description": "Unchanged native Dify Community1.17.1 keyless preview screenshot, explicit three-group controls ON demo. No media generation, API key, signed URL, or private task identifiers."
-    },
-    {
-      "file": "cover.png",
-      "sha256": "ce92366ef07096fb6073638cf1fc14cda73fbc1c1f879846cbb4ef8df6827fc0",
-      "description": "Code-native illustrative artwork, adapted from the existing Apixly Dify cover and official Apixly mark; Lucide Camera/Zap/Aperture icons used in the Studio interface."
-    },
-    {
-      "file": "cover.svg",
-      "sha256": "62c05e48b11612c4484b79d2449fba7006476cd0d8cfa03527c1bf017bb33c08",
-      "description": "Code-native illustrative artwork, adapted from the existing Apixly Dify cover and official Apixly mark; Lucide Camera/Zap/Aperture icons used in the Studio interface."
     }
   ]
 }
