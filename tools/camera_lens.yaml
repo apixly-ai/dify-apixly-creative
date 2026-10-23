@@ -1,0 +1,190 @@
+identity:
+  name: camera_lens
+  author: apixly-ai
+  label:
+    en_US: Camera & Lens
+    zh_Hans: 相机与镜头
+description:
+  human:
+    en_US: Choose camera & lens settings, then connect settings to Compose prompt.
+      Off by default. AI art-direction guidance.
+    zh_Hans: 设置相机与镜头，把 settings 接入“组合提示词”。默认关闭；参数用于 AI 创作指令。
+  llm: Free camera & lens control packet. No account, credential, network or generation.
+    Connect its settings output to Compose prompt; failures produce a nonempty failure
+    packet.
+parameters:
+- name: enabled
+  type: boolean
+  required: false
+  label:
+    en_US: Enable
+    zh_Hans: 启用
+  human_description:
+    en_US: Off by default. Enable to add camera and lens-look instructions.
+    zh_Hans: 默认关闭；启用后添加机身与镜头观感指令。
+  llm_description: Off by default. Enable to add camera and lens-look instructions.
+  form: llm
+  default: false
+- name: body
+  type: select
+  required: false
+  label:
+    en_US: Body
+    zh_Hans: 机身
+  human_description:
+    en_US: Optional camera-look reference. Leave unspecified to add no body phrase.
+    zh_Hans: 可选机身观感参考；不指定时不添加机身描述。
+  llm_description: Optional camera-look reference. Leave unspecified to add no body
+    phrase.
+  form: llm
+  default: __none__
+  options:
+  - value: __none__
+    label:
+      en_US: Unspecified
+      zh_Hans: 不指定
+  - value: arri-alexa-35
+    label:
+      en_US: ARRI Alexa 35
+      zh_Hans: ARRI Alexa 35
+  - value: sony-venice
+    label:
+      en_US: Sony Venice
+      zh_Hans: Sony Venice
+  - value: red-v-raptor
+    label:
+      en_US: RED V-Raptor
+      zh_Hans: RED V-Raptor
+  - value: panavision-dxl2
+    label:
+      en_US: Panavision Millennium DXL2
+      zh_Hans: Panavision Millennium DXL2
+  - value: imax-film
+    label:
+      en_US: IMAX 70mm film camera
+      zh_Hans: IMAX 70mm film camera
+  - value: leica-m11
+    label:
+      en_US: Leica M11
+      zh_Hans: Leica M11
+- name: lens
+  type: select
+  required: false
+  label:
+    en_US: Lens
+    zh_Hans: 镜头
+  human_description:
+    en_US: Optional lens-look reference.
+    zh_Hans: 可选镜头观感参考。
+  llm_description: Optional lens-look reference.
+  form: llm
+  default: __none__
+  options:
+  - value: __none__
+    label:
+      en_US: Unspecified
+      zh_Hans: 不指定
+  - value: cooke-anamorphic-sf
+    label:
+      en_US: Cooke · Anamorphic SF
+      zh_Hans: Cooke · Anamorphic SF
+  - value: panavision-c-series
+    label:
+      en_US: Panavision · C-Series
+      zh_Hans: Panavision · C-Series
+  - value: zeiss-master-prime
+    label:
+      en_US: Zeiss · Master Prime
+      zh_Hans: Zeiss · Master Prime
+  - value: canon-k35
+    label:
+      en_US: Canon · K35
+      zh_Hans: Canon · K35
+  - value: helios-44-2
+    label:
+      en_US: Helios · 44-2
+      zh_Hans: Helios · 44-2
+  - value: lensbaby
+    label:
+      en_US: Lensbaby · Composer
+      zh_Hans: Lensbaby · Composer
+- name: focal
+  type: number
+  required: false
+  label:
+    en_US: Focal length (mm)
+    zh_Hans: 焦距（mm）
+  human_description:
+    en_US: Optional integer 8–800 mm. Blank adds no focal-length phrase.
+    zh_Hans: 可选整数 8–800 mm；留空不添加焦距描述。
+  llm_description: Optional integer 8–800 mm. Blank adds no focal-length phrase.
+  form: llm
+  min: 8
+  max: 800
+- name: aperture
+  type: select
+  required: false
+  label:
+    en_US: Aperture
+    zh_Hans: 光圈
+  human_description:
+    en_US: Optional f-stop look. Wide apertures request shallow depth of field; f/8
+      and smaller request deep focus.
+    zh_Hans: 可选光圈观感；大光圈请求浅景深，f/8 及更小光圈请求深焦。
+  llm_description: Optional f-stop look. Wide apertures request shallow depth of field;
+    f/8 and smaller request deep focus.
+  form: llm
+  default: __none__
+  options:
+  - value: __none__
+    label:
+      en_US: Unspecified
+      zh_Hans: 不指定
+  - value: f/1.4
+    label:
+      en_US: f/1.4
+      zh_Hans: f/1.4
+  - value: f/1.8
+    label:
+      en_US: f/1.8
+      zh_Hans: f/1.8
+  - value: f/2.8
+    label:
+      en_US: f/2.8
+      zh_Hans: f/2.8
+  - value: f/4
+    label:
+      en_US: f/4
+      zh_Hans: f/4
+  - value: f/5.6
+    label:
+      en_US: f/5.6
+      zh_Hans: f/5.6
+  - value: f/8
+    label:
+      en_US: f/8
+      zh_Hans: f/8
+  - value: f/11
+    label:
+      en_US: f/11
+      zh_Hans: f/11
+  - value: f/16
+    label:
+      en_US: f/16
+      zh_Hans: f/16
+output_schema:
+  type: object
+  properties:
+    success:
+      type: boolean
+    settings:
+      type: string
+    preview:
+      type: string
+    error_path:
+      type: string
+    error:
+      type: string
+extra:
+  python:
+    source: tools/camera_lens.py

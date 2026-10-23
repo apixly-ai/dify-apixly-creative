@@ -1,0 +1,124 @@
+identity:
+  name: compose_prompt
+  author: apixly-ai
+  label:
+    en_US: Compose prompt
+    zh_Hans: 组合提示词
+description:
+  human:
+    en_US: Combine the base prompt and connected control nodes. Preview final_prompt
+      for free, then connect Generate/Edit only after success.
+    zh_Hans: 将原始提示词与控制节点一次合成。免费查看 final_prompt，success 为真后再连接生成或编辑。
+  llm: Free canonical prompt composition. Revalidates all settings packets. Edit mode
+    adds one preservation guard. No account, credential, network or generation.
+parameters:
+- name: prompt
+  type: string
+  required: false
+  label:
+    en_US: Base prompt
+    zh_Hans: 原始提示词
+  human_description:
+    en_US: Original text, preserved exactly when controls add no instruction. Empty
+      text is allowed for a style-only preview.
+    zh_Hans: 没有有效指令时逐字保留原文；仅预览风格时可留空。
+  llm_description: Original text, preserved exactly when controls add no instruction.
+    Empty text is allowed for a style-only preview.
+  form: llm
+  default: ''
+- name: mode
+  type: select
+  required: false
+  label:
+    en_US: Instruction mode
+    zh_Hans: 指令模式
+  human_description:
+    en_US: Generate adds labeled cues. Edit uses explicit change instructions and
+      preserves unrelated subject/scene details.
+    zh_Hans: 生成模式添加分组指令；编辑模式明确要求保留未请求修改的主体与场景细节。
+  llm_description: Generate adds labeled cues. Edit uses explicit change instructions
+    and preserves unrelated subject/scene details.
+  form: llm
+  default: generate
+  options:
+  - value: generate
+    label:
+      en_US: Generate a new image or video
+      zh_Hans: 生成新图片或视频
+  - value: edit
+    label:
+      en_US: Edit the same subject
+      zh_Hans: 编辑同一主体
+- name: viewpoint_settings
+  type: string
+  required: false
+  label:
+    en_US: Viewpoint
+    zh_Hans: 视角
+  human_description:
+    en_US: Connect Viewpoint / settings. Leave unconnected to keep this group off.
+    zh_Hans: 连接视角节点的 settings；不连接则关闭该组。
+  llm_description: Connect the complete settings string from the matching control
+    node. Never supply a prebuilt final prompt.
+  form: llm
+  default: ''
+- name: lighting_settings
+  type: string
+  required: false
+  label:
+    en_US: Lighting
+    zh_Hans: 打光
+  human_description:
+    en_US: Connect Lighting / settings. Leave unconnected to keep this group off.
+    zh_Hans: 连接打光节点的 settings；不连接则关闭该组。
+  llm_description: Connect the complete settings string from the matching control
+    node. Never supply a prebuilt final prompt.
+  form: llm
+  default: ''
+- name: camera_settings
+  type: string
+  required: false
+  label:
+    en_US: Camera & Lens
+    zh_Hans: 相机与镜头
+  human_description:
+    en_US: Connect Camera & Lens / settings. Leave unconnected to keep this group
+      off.
+    zh_Hans: 连接相机与镜头节点的 settings；不连接则关闭该组。
+  llm_description: Connect the complete settings string from the matching control
+    node. Never supply a prebuilt final prompt.
+  form: llm
+  default: ''
+output_schema:
+  type: object
+  properties:
+    final_prompt:
+      type: string
+    sections:
+      type: array
+      items:
+        type: object
+        properties:
+          tool:
+            type: string
+          label:
+            type: string
+          text:
+            type: string
+    applied_tools:
+      type: array
+      items:
+        type: string
+    changed:
+      type: boolean
+    success:
+      type: boolean
+    result_state:
+      type: string
+    error_path:
+      type: string
+    error:
+      type: string
+extra:
+  python:
+    source: tools/compose_prompt.py

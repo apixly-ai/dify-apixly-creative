@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-10-23",
+  "assets": [
+    {
+      "file": "free-preview-desktop.png",
+      "sha256": "a7516700827330269f531b1cf2103ae83f8f94b37be9146e6a1be764a4170cbd",
+      "description": "Unchanged native Dify Community1.17.1 keyless preview screenshot, explicit three-group controls ON demo. No media generation, API key, signed URL, or private task identifiers."
+    },
+    {
+      "file": "LICENSE-lucide.txt",
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc",
+      "description": "Lucide source license, copied unchanged."
+    },
+    {
+      "file": "free-preview-mobile.png",
+      "sha256": "29a49bc22588318ff08e88fb0d248550c003c821cc983e8ad8c4ca146077c688",
+      "description": "Unchanged native Dify Community1.17.1 keyless preview screenshot, explicit three-group controls ON demo. No media generation, API key, signed URL, or private task identifiers."
+    },
+    {
+      "file": "cover.png",
+      "sha256": "ce92366ef07096fb6073638cf1fc14cda73fbc1c1f879846cbb4ef8df6827fc0",
+      "description": "Code-native illustrative artwork, adapted from the existing Apixly Dify cover and official Apixly mark; Lucide Camera/Zap/Aperture icons used in the Studio interface."
+    },
+    {
+      "file": "cover.svg",
+      "sha256": "62c05e48b11612c4484b79d2449fba7006476cd0d8cfa03527c1bf017bb33c08",
+      "description": "Code-native illustrative artwork, adapted from the existing Apixly Dify cover and official Apixly mark; Lucide Camera/Zap/Aperture icons used in the Studio interface."
+    }
+  ]
+}

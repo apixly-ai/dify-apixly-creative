@@ -1,0 +1,248 @@
+identity:
+  name: lighting
+  author: apixly-ai
+  label:
+    en_US: Lighting
+    zh_Hans: 打光
+description:
+  human:
+    en_US: Choose lighting settings, then connect settings to Compose prompt. Off
+      by default. AI art-direction guidance.
+    zh_Hans: 设置打光，把 settings 接入“组合提示词”。默认关闭；参数用于 AI 创作指令。
+  llm: Free lighting control packet. No account, credential, network or generation.
+    Connect its settings output to Compose prompt; failures produce a nonempty failure
+    packet.
+parameters:
+- name: enabled
+  type: boolean
+  required: false
+  label:
+    en_US: Enable
+    zh_Hans: 启用
+  human_description:
+    en_US: Off by default. Enable to add lighting instructions.
+    zh_Hans: 默认关闭；启用后添加打光指令。
+  llm_description: Off by default. Enable to add lighting instructions.
+  form: llm
+  default: false
+- name: preset
+  type: select
+  required: false
+  label:
+    en_US: Preset
+    zh_Hans: 预设
+  human_description:
+    en_US: Optional lighting or color-grade preset.
+    zh_Hans: 可选打光或色调预设。
+  llm_description: Optional lighting or color-grade preset.
+  form: llm
+  default: __none__
+  options:
+  - value: __none__
+    label:
+      en_US: Unspecified
+      zh_Hans: 不指定
+  - value: overexposedFilm
+    label:
+      en_US: Overexposed film
+      zh_Hans: 胶片过曝
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmVmM2M3Ii8+PHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiNmZmZiZWIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMmU4ZjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+
+  - value: blueBacklight
+    label:
+      en_US: Blue backlight
+      zh_Hans: 蓝色逆光
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGIxMjI0Ii8+PHN0b3Agb2Zmc2V0PSI3MCUiIHN0b3AtY29sb3I9IiMxNjcwZjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGQzZmMiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+
+  - value: rembrandt
+    label:
+      en_US: Rembrandt
+      zh_Hans: 伦勃朗光
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjYjQ1MzBhIi8+PHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiM0NTFhMDMiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwYzBhMDkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+
+  - value: cyberpunk
+    label:
+      en_US: Cyberpunk
+      zh_Hans: 赛博霓虹
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZDk0NmVmIi8+PHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMwYjEyMjQiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMmQzZWUiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+
+  - value: psychedelicSunset
+    label:
+      en_US: Psychedelic sunset
+      zh_Hans: 迷幻落日
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZjk3MzE2Ii8+PHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiNlMTFkNDgiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhMjFjYWYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+
+  - value: mysteriousDark
+    label:
+      en_US: Mysterious low-key
+      zh_Hans: 神秘暗调
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMWUyOTNiIi8+PHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiMwZjE3MmEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMjA2MTciLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+
+  - value: goldenHour
+    label:
+      en_US: Golden hour
+      zh_Hans: 黄金时刻
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmJiZjI0Ii8+PHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiNmNTllMGIiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiNDUzMDkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+
+  - value: nolanGray
+    label:
+      en_US: Cool cinematic gray
+      zh_Hans: 冷灰电影色调
+    icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjOTRhM2I4Ii8+PHN0b3Agb2Zmc2V0PSI1NSUiIHN0b3AtY29sb3I9IiM0NzU1NjkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTI5M2IiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSJ1cmwoI2cpIi8+PC9zdmc+
+- name: brightness
+  type: number
+  required: false
+  label:
+    en_US: Brightness
+    zh_Hans: 亮度
+  human_description:
+    en_US: 0–100. The neutral 40–60 range adds no brightness phrase.
+    zh_Hans: 0–100；40–60 为中性区，不额外添加亮度指令。
+  llm_description: 0–100. The neutral 40–60 range adds no brightness phrase.
+  form: llm
+  default: 50
+  min: 0
+  max: 100
+- name: color
+  type: string
+  required: false
+  label:
+    en_US: Light color
+    zh_Hans: 光色
+  human_description:
+    en_US: 'Optional #RGB or #RRGGBB. Empty means unspecified. Black is not a light
+      color; lower brightness instead.'
+    zh_Hans: '可选 #RGB 或 #RRGGBB；留空不指定光色。不要用黑色作光色，应调低亮度。'
+  llm_description: 'Optional #RGB or #RRGGBB. Empty means unspecified. Black is not
+    a light color; lower brightness instead.'
+  form: llm
+  default: ''
+- name: direction_mode
+  type: select
+  required: false
+  label:
+    en_US: Direction mode
+    zh_Hans: 光向模式
+  human_description:
+    en_US: Named uses the direction preset. Coordinates uses only explicitly entered
+      horizontal/elevation values.
+    zh_Hans: 命名模式使用光向预设；坐标模式仅使用明确填写的水平或高低角度。
+  llm_description: Choose named direction or explicit coordinates. Empty coordinates
+    are never assumed to be zero.
+  form: llm
+  default: named
+  options:
+  - value: named
+    label:
+      en_US: Named direction
+      zh_Hans: 命名光向
+  - value: coordinates
+    label:
+      en_US: Explicit coordinates
+      zh_Hans: 明确坐标
+- name: key_light
+  type: select
+  required: false
+  label:
+    en_US: Named direction
+    zh_Hans: 主光方向
+  human_description:
+    en_US: Used in Named direction mode.
+    zh_Hans: 仅在命名光向模式使用。
+  llm_description: Used only while both optional light direction numbers are blank.
+  form: llm
+  default: __none__
+  options:
+  - value: __none__
+    label:
+      en_US: Unspecified
+      zh_Hans: 不指定
+  - value: left
+    label:
+      en_US: Camera left
+      zh_Hans: 相机左侧
+  - value: top
+    label:
+      en_US: Overhead
+      zh_Hans: 顶光
+  - value: right
+    label:
+      en_US: Camera right
+      zh_Hans: 相机右侧
+  - value: front
+    label:
+      en_US: Front
+      zh_Hans: 正面
+  - value: bottom
+    label:
+      en_US: Below
+      zh_Hans: 底光
+  - value: back
+    label:
+      en_US: Behind
+      zh_Hans: 逆光
+- name: yaw
+  type: number
+  required: false
+  label:
+    en_US: Horizontal (°)
+    zh_Hans: 水平（°）
+  human_description:
+    en_US: Leave blank to keep the named direction. Explicit zero is a real continuous-coordinate
+      setting.
+    zh_Hans: 留空保留命名方向；明确填写 0 会启用连续方位设置。
+  llm_description: Leave blank to keep the named direction. Explicit zero is a real
+    continuous-coordinate setting.
+  form: llm
+  min: -360000
+  max: 360000
+- name: pitch
+  type: number
+  required: false
+  label:
+    en_US: Elevation (°)
+    zh_Hans: 高低（°）
+  human_description:
+    en_US: Positive means light above the subject. Leave blank unless continuous positioning
+      is intended.
+    zh_Hans: 正数表示光源在主体上方；不需要连续定位时请留空。
+  llm_description: Positive means light above the subject. Leave blank unless continuous
+    positioning is intended.
+  form: llm
+  min: -90
+  max: 90
+- name: rim_light
+  type: boolean
+  required: false
+  label:
+    en_US: Rim light
+    zh_Hans: 轮廓光
+  human_description:
+    en_US: Add a rim-light direction cue when lighting is enabled.
+    zh_Hans: 打光启用时增加轮廓光指令。
+  llm_description: Add a rim-light direction cue when lighting is enabled.
+  form: llm
+  default: false
+- name: smart_text
+  type: string
+  required: false
+  label:
+    en_US: Additional direction
+    zh_Hans: 补充描述
+  human_description:
+    en_US: Optional lighting style, at most 1000 UTF-16 units. This text alone is
+      trimmed.
+    zh_Hans: 可选打光描述，最多 1000 个 UTF-16 单位；只有这段自由文本会去除首尾空白。
+  llm_description: Optional lighting style, at most 1000 UTF-16 units. This text alone
+    is trimmed.
+  form: llm
+  default: ''
+output_schema:
+  type: object
+  properties:
+    success:
+      type: boolean
+    settings:
+      type: string
+    preview:
+      type: string
+    error_path:
+      type: string
+    error:
+      type: string
+extra:
+  python:
+    source: tools/lighting.py

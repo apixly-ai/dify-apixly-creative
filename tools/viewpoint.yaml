@@ -1,0 +1,153 @@
+identity:
+  name: viewpoint
+  author: apixly-ai
+  label:
+    en_US: Viewpoint
+    zh_Hans: 视角
+description:
+  human:
+    en_US: Choose viewpoint settings, then connect settings to Compose prompt. Off
+      by default. AI art-direction guidance.
+    zh_Hans: 设置视角，把 settings 接入“组合提示词”。默认关闭；参数用于 AI 创作指令。
+  llm: Free viewpoint control packet. No account, credential, network or generation.
+    Connect its settings output to Compose prompt; failures produce a nonempty failure
+    packet.
+parameters:
+- name: enabled
+  type: boolean
+  required: false
+  label:
+    en_US: Enable
+    zh_Hans: 启用
+  human_description:
+    en_US: Off by default. Enable to add viewpoint instructions.
+    zh_Hans: 默认关闭；启用后添加机位指令。
+  llm_description: Off by default. Enable to add viewpoint instructions.
+  form: llm
+  default: false
+- name: preset
+  type: select
+  required: false
+  label:
+    en_US: Preset
+    zh_Hans: 预设
+  human_description:
+    en_US: Directional presets replace yaw and pitch. Fisheye/tilted styles combine
+      with the numeric direction.
+    zh_Hans: 方位预设替代水平/垂直角度；鱼眼和倾斜预设可叠加数值方位。
+  llm_description: Directional presets replace yaw and pitch. Fisheye/tilted styles
+    combine with the numeric direction.
+  form: llm
+  default: custom
+  options:
+  - value: custom
+    label:
+      en_US: Custom direction
+      zh_Hans: 自定义方位
+  - value: fisheye
+    label:
+      en_US: Fisheye
+      zh_Hans: 鱼眼
+  - value: dutch
+    label:
+      en_US: Dutch / tilted
+      zh_Hans: 倾斜机位
+  - value: front_high
+    label:
+      en_US: Front high angle
+      zh_Hans: 正面俯拍
+  - value: front_low
+    label:
+      en_US: Front low angle
+      zh_Hans: 正面仰拍
+  - value: aerial_top_down
+    label:
+      en_US: Aerial top-down
+      zh_Hans: 鸟瞰俯拍
+  - value: back
+    label:
+      en_US: Back view
+      zh_Hans: 背面
+- name: yaw
+  type: number
+  required: false
+  label:
+    en_US: Horizontal (°)
+    zh_Hans: 水平（°）
+  human_description:
+    en_US: 0 front, 90 subject right, 180 back, 270 left; wraps modulo 360.
+    zh_Hans: 0 正面、90 右侧、180 背面、270 左侧，按 360 度环绕。
+  llm_description: 0 front, 90 subject right, 180 back, 270 left; wraps modulo 360.
+  form: llm
+  default: 0
+  min: -360000
+  max: 360000
+- name: pitch
+  type: number
+  required: false
+  label:
+    en_US: Elevation (°)
+    zh_Hans: 高低（°）
+  human_description:
+    en_US: Positive means camera above the subject, looking down; negative means below,
+      looking up.
+    zh_Hans: 正数表示机位在主体上方俯拍，负数表示在下方仰拍。
+  llm_description: Positive means camera above the subject, looking down; negative
+    means below, looking up.
+  form: llm
+  default: 0
+  min: -90
+  max: 90
+- name: shot
+  type: select
+  required: false
+  label:
+    en_US: Framing
+    zh_Hans: 景别
+  human_description:
+    en_US: Optional shot size. Unspecified adds no framing phrase.
+    zh_Hans: 可选景别；不指定时不额外添加景别指令。
+  llm_description: Optional shot size. Unspecified adds no framing phrase.
+  form: llm
+  default: none
+  options:
+  - value: none
+    label:
+      en_US: Unspecified
+      zh_Hans: 不指定
+  - value: extreme_long
+    label:
+      en_US: Extreme long shot
+      zh_Hans: 远景
+  - value: long
+    label:
+      en_US: Long / full body
+      zh_Hans: 全景
+  - value: medium
+    label:
+      en_US: Medium shot
+      zh_Hans: 中景
+  - value: medium_close_up
+    label:
+      en_US: Medium close-up
+      zh_Hans: 近景
+  - value: close_up
+    label:
+      en_US: Close-up
+      zh_Hans: 特写
+output_schema:
+  type: object
+  properties:
+    success:
+      type: boolean
+    settings:
+      type: string
+    preview:
+      type: string
+    error_path:
+      type: string
+    error:
+      type: string
+extra:
+  python:
+    source: tools/viewpoint.py

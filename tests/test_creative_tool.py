@@ -36,7 +36,7 @@ class CreativeToolTests(unittest.TestCase):
         self.assertEqual(set(registration.tools_mapping), {"apixly_creative"})
         provider, _, tools = registration.tools_mapping["apixly_creative"]
         self.assertEqual(provider.credentials_schema, [])
-        self.assertEqual(set(tools), {"compose_creative_prompt"})
+        self.assertIn("compose_creative_prompt", tools)
 
     def test_disabled_controls_keep_exact_prompt_and_never_construct_an_api_client(self):
         variables, _ = self.invoke(

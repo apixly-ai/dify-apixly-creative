@@ -1,17 +1,29 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/apixly-ai/dify-apixly-creative/apixly/docs/assets/cover.png" alt="Apixly Creative Controls for Dify: viewpoint, lighting and camera-look prompt preview" width="1200" />
+</p>
+
 # Apixly Creative Controls for Dify
 
 Preview angle, lighting and camera-look instructions inside Dify's plugin runtime. This companion plugin needs no Apixly account or API key and makes no generation request. Dify workspace/runtime costs are controlled by your operator.
 
 **Enable a group → choose its preset or values → preview `final_prompt` → connect a generation tool only when ready.** All three groups default off. When no instruction is added, the original prompt is preserved exactly. Edit mode asks the model to retain subject and scene details not requested to change. These are AI creative instructions, rather than physical camera or light simulation.
 
-## Install and preview
+## Start with four small Studio nodes
 
-1. Install the released `apixly_creative` package in Dify. A local package is separate from Marketplace approval/signing.
-2. Select **Apixly Creative Controls → Preview creative prompt · free**. No credential setup is required.
-3. Enter your base prompt. Enable only the groups you want, then choose angle, lighting and camera/lens settings.
-4. Run the compose step and inspect `final_prompt`, `sections`, `applied_tools` and `changed`. It does not generate an image or video.
+1. Add **Viewpoint**, **Lighting**, and **Camera & Lens**. Each card has only its own controls; all groups default off.
+2. Enable the groups you want. Lighting has an explicit **Named direction / Coordinates** mode; blank coordinates never become zero automatically.
+3. Connect each card's **settings** output to its matching input on **Compose prompt**, and connect your base prompt. Use **Edit** mode when preserving an existing subject.
+4. Run the free preview and inspect `final_prompt`. Connect a separate Generate/Edit tool only after `success` is true.
+
+Dify supplies the native card shell and parameter widgets. Short camera/lens labels and eight inline lighting swatches reuse Apixly Studio's existing controls. The original **Preview creative prompt · free** tool remains available for older workflows.
 
 Invalid controls return `success: false`, an `error_path` and a safe message. Keep any later paid node behind a success check. Numbers stay typed; no automatic model replacement or paid retry is introduced.
+
+## See the prompt before generating
+
+<img src="https://raw.githubusercontent.com/apixly-ai/dify-apixly-creative/apixly/docs/assets/free-preview-desktop.png" alt="Actual native Dify keyless preview: viewpoint, golden-hour lighting and Helios lens instructions" width="1200" />
+
+This is an actual Dify Community 1.17.1 result from a deliberately enabled demo. The published running page also works at a [375px viewport](https://raw.githubusercontent.com/apixly-ai/dify-apixly-creative/apixly/docs/assets/free-preview-mobile.png). The workflow editor remains desktop-oriented. No model was called for this preview. [Asset sources and hashes](docs/assets/provenance.json).
 
 ## Optional media generation
 
@@ -23,12 +35,12 @@ Install [Apixly Media](https://github.com/apixly-ai/dify-apixly) separately to g
 
 | Workflow | Required plugins | Result |
 | --- | --- | --- |
-| [Free prompt preview](https://github.com/apixly-ai/dify-apixly/blob/apixly/examples/apixly-creative-preview-workflow.yml) | Creative Controls only | Prompt or a safe validation message; no generation |
-| [Creative image](https://github.com/apixly-ai/dify-apixly/blob/apixly/examples/apixly-creative-image-workflow.yml) | Creative Controls + Apixly Media | One image task and files |
-| [Creative reference edit](https://github.com/apixly-ai/dify-apixly/blob/apixly/examples/apixly-creative-edit-workflow.yml) | Creative Controls + Apixly Media | One reference-edit task and files |
-| [Creative video](https://github.com/apixly-ai/dify-apixly/blob/apixly/examples/apixly-creative-video-workflow.yml) | Creative Controls + Apixly Media | One video task and files |
+| [Free prompt preview](https://github.com/apixly-ai/dify-apixly/blob/apixly/examples/apixly-studio-preview-workflow.yml) | Creative Controls only | Prompt or a safe validation message; no generation |
+| [Creative image](https://github.com/apixly-ai/dify-apixly/blob/apixly/examples/apixly-studio-image-workflow.yml) | Creative Controls + Apixly Media | One image task and files |
+| [Creative reference edit](https://github.com/apixly-ai/dify-apixly/blob/apixly/examples/apixly-studio-edit-workflow.yml) | Creative Controls + Apixly Media | One reference-edit task and files |
+| [Creative video](https://github.com/apixly-ai/dify-apixly/blob/apixly/examples/apixly-studio-video-workflow.yml) | Creative Controls + Apixly Media | One video task and files |
 
-Install the exact packages referenced by the downloaded workflow. All example control groups remain off until you explicitly enable them. Lighting presets reuse Apixly Studio's existing gradient swatches; camera and lens labels use the same familiar short names. Dify provides the native node shell and parameter widgets.
+The four Studio workflows are recommended for new projects. The original eight media/creative workflows remain available for compatibility. Install the exact packages referenced by the downloaded workflow. All example control groups remain off until you explicitly enable them. Lighting presets reuse Apixly Studio's existing gradient swatches; camera and lens labels use the same familiar short names. Dify provides the native node shell and parameter widgets.
 
 ## Development
 

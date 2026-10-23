@@ -13,6 +13,10 @@ identity:
   - videos
 credentials_for_provider: {}
 tools:
+- tools/viewpoint.yaml
+- tools/lighting.yaml
+- tools/camera_lens.yaml
+- tools/compose_prompt.yaml
 - tools/compose_creative_prompt.yaml
 extra:
   python:
