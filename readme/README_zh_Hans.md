@@ -50,6 +50,6 @@
 
 Community 1.17.1 原生验收覆盖五个免费工具与媒体插件共存、合计 12 份工作流导入、53 个编辑器面板的参数与绑定保存，以及真实工作流引擎中的七项受控输入用例。本地发布的免费预览已在桌面和 375px 视口实际运行，未发起推理。[QA 范围与宿主限制](https://github.com/apixly-ai/dify-apixly-creative/blob/apixly/docs/QA.md) · [截图来源与校验值](https://github.com/apixly-ai/dify-apixly-creative/blob/apixly/docs/assets/provenance.json)。
 
-编译器不访问外部 API，不增加独立存储或遥测；Dify 宿主可能按工作区设置保存输入和输出。详见[隐私说明](../PRIVACY.md)。Cloud 兼容性、真实账号授权与新增付费媒体效果属于独立验收项。
+编译器不访问外部 API，不增加独立存储或遥测；Dify 宿主可能按工作区设置保存输入和输出。详见[隐私说明](../PRIVACY.md)。Cloud 兼容性未验证。可选账号连接媒体工作流有独立的[文件交付与保留期验收](https://github.com/apixly-ai/dify-apixly/blob/apixly/docs/QA.md)；本编译器仍无需账号或生成调用。
 
 [官网](https://apixly.ai/) · [控制台](https://platform.apixly.ai/) · [媒体 API Key](https://platform.apixly.ai/keys) · [模型与价格](https://platform.apixly.ai/models) · [API 文档](https://apixly.ai/docs) · [English](../README.md)。支持：support@apixly.ai。

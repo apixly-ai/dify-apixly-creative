@@ -40,7 +40,7 @@ The README PNGs are unchanged captures from this five-tool candidate. The editor
 
 The native running page fits a **375×900** viewport without horizontal overflow. Dify presents its mobile result in a bottom sheet. Its native Run button is 32px high, and the workflow editor remains desktop-oriented at that width. The plugin does not modify Dify's shell or widgets. These checks used a headless Firefox/Camofox viewport with humanization enabled; they do not establish iOS Safari, touch-event or soft-keyboard behavior.
 
-Live account consent/Key switching, the account-mode catalog relay, and new paid creative image/edit/video quality remain separate media-plugin qualification gates. No screenshot or free prompt result implies those checks have passed.
+Optional account-connected media workflows are documented separately in [Apixly Media QA](https://github.com/apixly-ai/dify-apixly/blob/apixly/docs/QA.md). Real image generation, single-reference camera-look editing and text-video files were delivered through that plugin using the outputs of these controls. Creative Controls itself still needs no account or API call; a free prompt preview alone does not establish a media result.
 
 ## Source and reproducibility
 
@@ -54,4 +54,8 @@ Install the development requirements in a Python 3.12 virtual environment, then 
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-The owned QA tab and Docker project were stopped after verification, with the external port released and credentials read back empty. Local fixture app IDs and detailed receipts remain private for targeted cleanup. No customer content, key, signed media URL, private job/request ID or billing receipt is included in these assets. Files under `docs/**` stay outside `.difypkg`; public README images use absolute raw PNG URLs.
+The independent free-only qualification phase ended with its owned tab and Docker project stopped, the external port released and credentials read back empty. The later account/media phase used its own controlled connections. Local fixture app IDs and detailed receipts remain private for targeted cleanup. No customer content, key, signed media URL, private job/request ID or billing receipt is included in these assets. Files under `docs/**` stay outside `.difypkg`; public README images use absolute raw PNG URLs.
+
+## Final distribution provenance
+
+A final documentation-only package retains every Python, YAML, dependency and icon byte from the installed five-tool runtime. The final package is installed alongside Media, the twelve current DSLs and their 53 original tool-parameter bindings are read back, and a free native workflow sanity run returns the canonical prompt without inference. Media-package read-only task checks have their own result and retention scope. Release notes distinguish the paid-tested candidate from the final documentation package.
