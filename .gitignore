@@ -1,0 +1,8 @@
+.venv/
+validation/
+dist/
+__pycache__/
+**/__pycache__/
+*.pyc
+.ruff_cache/
+.env*

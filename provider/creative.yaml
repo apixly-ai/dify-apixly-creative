@@ -1,0 +1,19 @@
+identity:
+  author: apixly-ai
+  name: apixly_creative
+  label:
+    en_US: Apixly Creative Controls
+    zh_Hans: Apixly 创作指令
+  description:
+    en_US: Preview creative prompts inside Dify. No API key or generation request.
+    zh_Hans: 在 Dify 中免费预览创作提示词，无需 API Key，不创建生成任务。
+  icon: icon.png
+  tags:
+  - image
+  - videos
+credentials_for_provider: {}
+tools:
+- tools/compose_creative_prompt.yaml
+extra:
+  python:
+    source: provider/creative.py
