@@ -6,6 +6,8 @@
 
 Five free tools for viewpoint, lighting and camera-look prompts. Preview inside Dify's plugin runtime with **no Apixly account, API key or model request**. Dify's own runtime costs remain your operator's responsibility.
 
+**[Install the free plugin from Dify Marketplace](https://marketplace.dify.ai/plugin/apixly-ai/apixly_creative)**
+
 **Optional: Apixly's one-stop AI API platform** brings together GPT, Gemini, Claude, images and video. **Selected GPT text models from 10% of official API rates** (checked 2026-10-25; model, token tier and Key pricing vary). API use is billed separately; this formatter stays free and needs no account or Key.
 
 **[apixly.ai](https://apixly.ai/)** · **[platform.apixly.ai](https://platform.apixly.ai/)** · [Prices](https://platform.apixly.ai/models) · [API keys](https://platform.apixly.ai/keys) · [API docs](https://apixly.ai/docs)

@@ -6,6 +6,8 @@
 
 五个免费工具，组合视角、打光与相机镜头观感提示词。**无需 Apixly 账号或 API Key，不调用模型**，在 Dify 插件运行环境中预览；Dify 自身资源费用由宿主管理。
 
+**[从 Dify Marketplace 免费安装](https://marketplace.dify.ai/plugin/apixly-ai/apixly_creative)**
+
 **可选：Apixly 一站式 AI API 平台**汇聚 GPT、Gemini、Claude 及图片、视频。**指定 GPT 文本模型低至官方 1 折**（2026-10-25 核验；按型号、Token 档位和 Key 确定）。API 调用单独计费；本免费工具仍无需账号、Key 或模型调用。
 
 **[apixly.ai](https://apixly.ai/)** · **[platform.apixly.ai](https://platform.apixly.ai/)** · [价格](https://platform.apixly.ai/models) · [API Key](https://platform.apixly.ai/keys) · [文档](https://apixly.ai/docs)
