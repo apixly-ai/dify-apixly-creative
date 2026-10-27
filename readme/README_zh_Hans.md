@@ -2,15 +2,19 @@
   <img src="https://raw.githubusercontent.com/apixly-ai/dify-apixly-creative/apixly/docs/assets/cover.png" alt="Apixly Dify 创作指令：视角、打光、相机镜头观感免费预览" width="1200" />
 </p>
 
-# Apixly 创作指令：Dify 免费预览工具
+# Apixly Creative Controls for Dify：免费提示词工具
 
 五个免费工具，组合视角、打光与相机镜头观感提示词。**无需 Apixly 账号或 API Key，不调用模型**，在 Dify 插件运行环境中预览；Dify 自身资源费用由宿主管理。
 
 **[从 Dify Marketplace 免费安装](https://marketplace.dify.ai/plugin/apixly-ai/apixly_creative)**
 
-**可选：Apixly 一站式 AI API 平台**汇聚 GPT、Gemini、Claude 及图片、视频。**指定 GPT 文本模型低至官方 1 折**（2026-10-25 核验；按型号、Token 档位和 Key 确定）。API 调用单独计费；本免费工具仍无需账号、Key 或模型调用。
-
 **[apixly.ai](https://apixly.ai/)** · **[platform.apixly.ai](https://platform.apixly.ai/)** · [价格](https://platform.apixly.ai/models) · [API Key](https://platform.apixly.ai/keys) · [文档](https://apixly.ai/docs)
+
+## 关于这份 Apixly 集成
+
+**Apixly Creative Controls**（`apixly-ai/apixly_creative`）在 Dify 中格式化提示词与设置，不调用 AI 模型，也不是 API 或模型提供商。输出可以交给自己选择的生成工具。
+
+独立的 [Apixly AI API 平台](https://apixly.ai/)与 [Apixly Media 集成](https://github.com/apixly-ai/dify-apixly)均为可选。采用这条生成路径时，可查看[图片 API 指南](https://apixly.ai/docs/images)、[视频任务指南](https://apixly.ai/docs/video)和[控制台](https://platform.apixly.ai/)。[平台与价格说明](https://github.com/apixly-ai/dify-apixly/blob/apixly/docs/ABOUT_APIXLY_zh_Hans.md)介绍更广的平台服务，不改变本工具无需凭据的行为。
 
 ## 用四个小节点组织提示词
 
@@ -51,6 +55,28 @@
 原八份工作流继续兼容。请安装所下载 DSL 引用的精确包。控制节点失败会输出明确失败包，组合节点随即停止；示例先进入安全错误分支，不执行媒体节点。
 
 需要生成时再安装独立 [Apixly Media](https://github.com/apixly-ai/dify-apixly)，并配置其媒体凭据。插件免费，API 按自己的 Apixly 账号实际用量计费。
+
+## 常见问题
+
+### 免费预览需要 Apixly 账号或 Key 吗？
+
+不需要。五个格式化工具都不要求 Apixly 账号、API Key 或生成请求；Dify 宿主仍需提供自己的运行资源。
+
+### 必须安装 Apixly Media 吗？
+
+不必。组合后的提示词可以交给合适的生成工具。只有可选的图片、视频联动流程才需要 Apixly Media；其账号凭据和 API 费用独立，采用前请查看[当前价格](https://platform.apixly.ai/models)。
+
+### 关闭控制或输入无效设置会怎样？
+
+所有组默认关闭，逐字保留原提示词。无效设置输出失败包，组合节点与示例在媒体提交前停止；仅在 `success` 为真时连接生成。
+
+### 相机和打光控件是否进行物理模拟？
+
+不是。这些控件描述期望的视觉观感，生成图片如何遵循它们取决于所选模型。本工具只输出文本与结构化设置。
+
+### 示例依赖哪个版本？
+
+链接的 DSL 当前固定已批准的 Creative Controls **0.1.0**，以及必要时的 Media **0.2.0**，使用官方签名校验值。源码文档更新不改变这些包身份，也不要求创建新 Key。
 
 ## 验证与隐私
 

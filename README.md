@@ -2,15 +2,19 @@
   <img src="https://raw.githubusercontent.com/apixly-ai/dify-apixly-creative/apixly/docs/assets/cover.png" alt="Apixly Creative Controls: viewpoint, lighting and camera-look prompt preview for Dify" width="1200" />
 </p>
 
-# Apixly Creative Controls for Dify
+# Apixly Creative Controls for Dify: free prompt tools
 
 Five free tools for viewpoint, lighting and camera-look prompts. Preview inside Dify's plugin runtime with **no Apixly account, API key or model request**. Dify's own runtime costs remain your operator's responsibility.
 
 **[Install the free plugin from Dify Marketplace](https://marketplace.dify.ai/plugin/apixly-ai/apixly_creative)**
 
-**Optional: Apixly's one-stop AI API platform** brings together GPT, Gemini, Claude, images and video. **Selected GPT text models from 10% of official API rates** (checked 2026-10-25; model, token tier and Key pricing vary). API use is billed separately; this formatter stays free and needs no account or Key.
-
 **[apixly.ai](https://apixly.ai/)** · **[platform.apixly.ai](https://platform.apixly.ai/)** · [Prices](https://platform.apixly.ai/models) · [API keys](https://platform.apixly.ai/keys) · [API docs](https://apixly.ai/docs)
+
+## About this Apixly integration
+
+**Apixly Creative Controls** (`apixly-ai/apixly_creative`) formats prompts and settings inside Dify. It does not call an AI model or act as an API/model provider. Its output can feed a generation tool you choose.
+
+The separate [Apixly AI API platform](https://apixly.ai/) and [Apixly Media integration](https://github.com/apixly-ai/dify-apixly) are optional. For that path, use the [image API guide](https://apixly.ai/docs/images), [video task guide](https://apixly.ai/docs/video) and [console](https://platform.apixly.ai/). [Platform and pricing context](https://github.com/apixly-ai/dify-apixly/blob/apixly/docs/ABOUT_APIXLY.md) describes the wider service without changing this formatter's credential-free behavior.
 
 ## Build your prompt with four small nodes
 
@@ -51,6 +55,28 @@ This explicitly enabled demo produced the final prompt without a Key or generati
 The original eight workflows remain available. Install the exact packages referenced by your downloaded DSL. Invalid controls emit a failed settings packet; Compose stops and the examples route to a safe error before any media node.
 
 Optional generation requires the separate [Apixly Media](https://github.com/apixly-ai/dify-apixly) plugin and its own credential. The plugin is free; API usage is charged to your Apixly account.
+
+## FAQ
+
+### Is an Apixly account or Key required for the free preview?
+
+No. All five formatting tools run without an Apixly account, API key or generation request. Your Dify operator still supplies its own runtime resources.
+
+### Must I install Apixly Media?
+
+No. Use the composed prompt with any suitable generation tool. Apixly Media is needed only for the optional connected image/video workflows; its account credentials and API charges are separate. Check [current prices](https://platform.apixly.ai/models) before that optional step.
+
+### What happens when controls are off or invalid?
+
+All groups default off, preserving the base prompt exactly. Invalid settings produce a failure packet; Compose and the examples stop before a media submission. Connect generation only when `success` is true.
+
+### Are camera and lighting controls a physical simulation?
+
+No. They describe an intended visual look. How a generated image follows those instructions depends on the chosen model. The formatter itself only produces text and structured settings.
+
+### Which package do the examples need?
+
+The linked DSLs currently pin approved Creative Controls **0.1.0** and, where needed, Media **0.2.0** with their official signed checksums. Source documentation changes do not update those package identities or require a new Key.
 
 ## Verification and privacy
 
