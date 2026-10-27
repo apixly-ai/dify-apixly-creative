@@ -10,6 +10,8 @@ Five free tools for viewpoint, lighting and camera-look prompts. Preview inside 
 
 **[apixly.ai](https://apixly.ai/)** · **[platform.apixly.ai](https://platform.apixly.ai/)** · [Prices](https://platform.apixly.ai/models) · [API keys](https://platform.apixly.ai/keys) · [API docs](https://apixly.ai/docs)
 
+[Apixly plugin setup guide](https://apixly.ai/guides/en/apixly-ai-api-plugins) explains how this free formatter differs from the optional media integration.
+
 ## About this Apixly integration
 
 **Apixly Creative Controls** (`apixly-ai/apixly_creative`) formats prompts and settings inside Dify. It does not call an AI model or act as an API/model provider. Its output can feed a generation tool you choose.

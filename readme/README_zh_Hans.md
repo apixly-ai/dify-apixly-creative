@@ -10,6 +10,8 @@
 
 **[apixly.ai](https://apixly.ai/)** · **[platform.apixly.ai](https://platform.apixly.ai/)** · [价格](https://platform.apixly.ai/models) · [API Key](https://platform.apixly.ai/keys) · [文档](https://apixly.ai/docs)
 
+[Apixly 插件安装与接入指南](https://apixly.ai/guides/zh/apixly-ai-api-plugins)说明本免费提示词工具与可选媒体集成的区别。
+
 ## 关于这份 Apixly 集成
 
 **Apixly Creative Controls**（`apixly-ai/apixly_creative`）在 Dify 中格式化提示词与设置，不调用 AI 模型，也不是 API 或模型提供商。输出可以交给自己选择的生成工具。
